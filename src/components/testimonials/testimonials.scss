@@ -4,14 +4,15 @@
 }
 
 body {
-  background: #cccccc;
+  background: #eeeeee;
 }
+
 .testimonials {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  // padding: 0 0.5rem;
+  padding: 20px 0;
 
   &__arrow-btn {
     background: transparent;    
@@ -25,7 +26,11 @@ body {
     
     &:hover {
       background: rgba( 182, 203, 124 , 0.55);
-    }    
+    }
+    
+    &:focus {
+      outline: 0;
+    }
   }
 
   &__arrow-svg{
@@ -35,7 +40,7 @@ body {
   &__slider-container {    
     display: flex;    
     flex-grow: 1;    
-    overflow: hidden;
+    overflow: hidden;    
   }
 
   &__slider {    
@@ -46,20 +51,25 @@ body {
   }
 
   &__slide {
-    width: 20%;
+    width: 25%;
     display: flex;    
     align-items: center;
     flex-shrink: 0;
-    margin: calc(20% / 3);
-    background: #aaaaaa;
-    color: #ffffff; 
+    margin: calc(25% / 6);
+    background: #fefefe;
+    color: #484848; 
     padding: 25px 0;
     transition: 0.5s;
     box-shadow: 8px 8px 17px 0px rgba(0,0,0,0.55);
     overflow: hidden;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.2); 
+    }
 
     &--dark {
-      background: #333333;
+      background: #2e2e2e;
       color: #ffffff; 
       transform: scale(1.2); 
 
@@ -85,8 +95,8 @@ body {
   &__avatar {
     transition: 0.5s;
     display: inline-block;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background: #555555;
     border-radius: 35px;
   }
@@ -106,15 +116,11 @@ body {
   &__content-box {
     width: 40%;
     margin: 0 auto;
-    background: #333333;
+    background: #2e2e2e;
     color: #ffffff; 
     padding: 25px;
     box-shadow: 8px 8px 17px 0px rgba(0,0,0,0.55);
   }
-
-  // &__mobile-slide {
-  //   display: none;
-  // }
 
   &__content-box-title {
     text-transform: uppercase;
@@ -140,16 +146,22 @@ body {
 
 @media screen and (max-width: 500px) {
   .testimonials {
+    text-align: center;
 
     &__slide {      
       display: none;
 
       &--mobile {      
         display: flex;
+        flex-direction: column;
         justify-content: center;
+        text-align: center;
+        margin-bottom: 15px;
       }
     }    
 
-    
+    &__content-box {
+      width: 80%;
+    }
   }
 }

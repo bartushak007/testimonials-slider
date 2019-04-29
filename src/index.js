@@ -6,50 +6,80 @@ import Testimonials from "./components/testimonials/Testimonials";
 
 const usersComments = [
   {
-    url: "",
+    url: "./images/1.jpg",
     name: "Petro",
     status: "immigrant",
-    story: "full story",
+    story: `React components implement a  
+      method that takes input data and returns 
+      what to display. This example uses an 
+      XML-like syntax called JSX. Input data 
+      that is passed into the component can be 
+      accessed by  via this.props`,
     titleStory: "story ",
     afterwords: "afterwords"
   },
   {
-    url: "",
+    url: "./images/2.jpg",
     name: "Vasul",
     status: "prizoner",
-    story: "story",
+    story: `React components implement a  
+    method that takes input data and returns 
+    what to display. This example uses an 
+    XML-like syntax called JSX. Input data 
+    that is passed into the component can be 
+    accessed by  via this.props`,
     titleStory: "title sory",
     afterwords: "afterwords"
   },
   {
-    url: "",
+    url: "./images/3.jpg",
     name: "Ivan",
     status: "immigrant",
-    story: "amazing story",
+    story: `React components implement a  
+    method that takes input data and returns 
+    what to display. This example uses an 
+    XML-like syntax called JSX. Input data 
+    that is passed into the component can be 
+    accessed by  via this.props`,
     titleStory: "title",
     afterwords: "afterwords"
   },
   {
-    url: "",
+    url: "./images/1.jpg",
     name: "Petro",
     status: "immigrant",
-    story: "full story",
+    story: `React components implement a  
+      method that takes input data and returns 
+      what to display. This example uses an 
+      XML-like syntax called JSX. Input data 
+      that is passed into the component can be 
+      accessed by  via this.props`,
     titleStory: "story ",
     afterwords: "afterwords"
   },
   {
-    url: "",
+    url: "./images/2.jpg",
     name: "Vasul",
     status: "prizoner",
-    story: "story",
+    story: `React components implement a  
+    method that takes input data and returns 
+    what to display. This example uses an 
+    XML-like syntax called JSX. Input data 
+    that is passed into the component can be 
+    accessed by  via this.props`,
     titleStory: "title sory",
     afterwords: "afterwords"
   },
   {
-    url: "",
+    url: "./images/3.jpg",
     name: "Ivan",
     status: "immigrant",
-    story: "amazing story",
+    story: `React components implement a  
+    method that takes input data and returns 
+    what to display. This example uses an 
+    XML-like syntax called JSX. Input data 
+    that is passed into the component can be 
+    accessed by  via this.props`,
     titleStory: "title",
     afterwords: "afterwords"
   }
