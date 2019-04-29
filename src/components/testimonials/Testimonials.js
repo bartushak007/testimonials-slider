@@ -5,21 +5,39 @@ import ContentBox from "./ContentBox";
 
 import "./testimonials.scss";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+
 const Testimonials = ({ usersComments }) => {
-  const { currentSlide, nextSlide, prevSlide } = useSlider(usersComments);
+  const { currentSlide, nextSlide, prevSlide, setSlide } = useSlider(
+    usersComments
+  );
 
   return (
     <div>
       <div className="testimonials">
         <div>
-          <button onClick={prevSlide}>prev</button>
+          <button className="testimonials__arrow-btn" onClick={prevSlide}>
+            <FontAwesomeIcon
+              className="testimonials__arrow-svg"
+              icon={faAngleLeft}
+            />
+          </button>
         </div>
-        <Slider {...{ usersComments, currentSlide }} />
+        {/* <Slider {...{ usersComments, currentSlide, setSlide }} /> */}
         <div>
-          <button onClick={nextSlide}>next</button>
+          <Slider {...{ usersComments, currentSlide, setSlide }} />
+          <ContentBox {...usersComments[currentSlide]} />
+        </div>
+        <div>
+          <button className="testimonials__arrow-btn" onClick={nextSlide}>
+            <FontAwesomeIcon
+              className="testimonials__arrow-svg"
+              icon={faAngleRight}
+            />
+          </button>
         </div>
       </div>
-      <ContentBox {...usersComments[currentSlide]} />
     </div>
   );
 };

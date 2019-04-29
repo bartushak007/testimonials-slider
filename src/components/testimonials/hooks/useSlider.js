@@ -20,10 +20,13 @@ const useSlider = slides => {
 
   const prevSlide = () => currentSlide && setCurrentSlide(currentSlide - 1);
 
+  const setSlide = id => setCurrentSlide(id);
+
   return {
     currentSlide,
     nextSlide,
-    prevSlide
+    prevSlide,
+    setSlide
   };
 };
 

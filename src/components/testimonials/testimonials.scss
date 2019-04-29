@@ -8,16 +8,37 @@ body {
 }
 .testimonials {
   display: flex;
+  justify-content: space-around;
   align-items: center;
+  width: 100%;
+  // padding: 0 0.5rem;
+
+  &__arrow-btn {
+    background: transparent;    
+    border: 0;
+    font-size: 40px;  
+    border-radius: 35px;
+    width: 50px;
+    height: 50px;
+    display: flex;  
+    cursor: pointer;
+    
+    &:hover {
+      background: rgba( 182, 203, 124 , 0.55);
+    }    
+  }
+
+  &__arrow-svg{
+    margin: auto;
+  }
 
   &__slider-container {    
-    display: flex;
-    width: 60%;
+    display: flex;    
     flex-grow: 1;    
     overflow: hidden;
   }
 
-  &__slider {
+  &__slider {    
     transition: 1s;
     display: flex;
     width: 100%;
@@ -26,26 +47,109 @@ body {
 
   &__slide {
     width: 20%;
-    display: flex;
+    display: flex;    
     align-items: center;
     flex-shrink: 0;
-    margin: 6.6%;
-    background: cadetblue; 
+    margin: calc(20% / 3);
+    background: #aaaaaa;
+    color: #ffffff; 
+    padding: 25px 0;
+    transition: 0.5s;
+    box-shadow: 8px 8px 17px 0px rgba(0,0,0,0.55);
+    overflow: hidden;
+
+    &--dark {
+      background: #333333;
+      color: #ffffff; 
+      transform: scale(1.2); 
+
+      & .testimonials__avatar{
+        // width: 60px;
+        // height: 60px;
+      }
+    }
+
+    &--mobile {      
+      display: none;
+    }
+  }
+
+  &__user-avatar {    
+    margin-left: 20px;
+  }
+
+  &__user-info {
+    margin-left: 8px;
   }
 
   &__avatar {
+    transition: 0.5s;
     display: inline-block;
     width: 50px;
     height: 50px;
-    background: #777777;
-    border-radius: 25px;
+    background: #555555;
+    border-radius: 35px;
   }
 
-  &__autor {
+  &__author {
     margin: 0;    
   }
 
   &__status {
     font-size: 14px;
+
+    &--bold {
+      font-weight: bold;
+    }
+  }
+
+  &__content-box {
+    width: 40%;
+    margin: 0 auto;
+    background: #333333;
+    color: #ffffff; 
+    padding: 25px;
+    box-shadow: 8px 8px 17px 0px rgba(0,0,0,0.55);
+  }
+
+  // &__mobile-slide {
+  //   display: none;
+  // }
+
+  &__content-box-title {
+    text-transform: uppercase;
   }
 } 
+
+@media screen and (max-width: 960px) {
+  .testimonials {
+    &__slide {      
+      flex-direction: column;
+      text-align: center;
+    }
+
+    &__user-avatar {    
+      margin-left: 0;
+    }
+  
+    &__user-info {
+      margin-left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .testimonials {
+
+    &__slide {      
+      display: none;
+
+      &--mobile {      
+        display: flex;
+        justify-content: center;
+      }
+    }    
+
+    
+  }
+}
