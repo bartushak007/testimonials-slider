@@ -13,29 +13,27 @@ const Testimonials = ({ usersComments }) => {
     usersComments
   );
 
+  const ButtonControl = ({ go, faShape }) => (
+    <button className="testimonials__arrow-btn" onClick={go}>
+      <FontAwesomeIcon className="testimonials__arrow-svg" icon={faShape} />
+    </button>
+  );
+
   return (
     <div>
       <div className="testimonials">
-        <div>
-          <button className="testimonials__arrow-btn" onClick={prevSlide}>
-            <FontAwesomeIcon
-              className="testimonials__arrow-svg"
-              icon={faAngleLeft}
-            />
-          </button>
-        </div>
-        {/* <Slider {...{ usersComments, currentSlide, setSlide }} /> */}
-        <div>
+        <div className="testimonials__slider-area">
+          <div className="testimonials__button-container">
+            <ButtonControl faShape={faAngleLeft} go={prevSlide} />
+          </div>
           <Slider {...{ usersComments, currentSlide, setSlide }} />
-          <ContentBox {...usersComments[currentSlide]} />
+          <div className="testimonials__button-container">
+            <ButtonControl faShape={faAngleRight} go={nextSlide} />
+          </div>
         </div>
         <div>
-          <button className="testimonials__arrow-btn" onClick={nextSlide}>
-            <FontAwesomeIcon
-              className="testimonials__arrow-svg"
-              icon={faAngleRight}
-            />
-          </button>
+          {/* <Slider {...{ usersComments, currentSlide, setSlide }} /> */}
+          <ContentBox {...usersComments[currentSlide]} />
         </div>
       </div>
     </div>

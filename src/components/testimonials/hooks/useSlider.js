@@ -1,23 +1,25 @@
 import { useState, useEffect } from "react";
 
-const useSlider = (slides, delay = 4000, slide = true) => {
+const useSlider = (slides, delay = 4000, doSlide = true) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [doSlide, setDoSlide] = useState(slide);
+  const [goRight, setGoRight] = useState(true);
   const length = slides.length;
 
   useEffect(() => {
     if (doSlide) {
-      const interval = setInterval(
-        () =>
-          currentSlide < length - 1
-            ? setCurrentSlide(currentSlide + 1)
-            : setDoSlide(!doSlide),
-        delay
-      );
+      const interval = setInterval(() => {
+        if (goRight) {
+          setCurrentSlide(currentSlide + 1);
+          currentSlide === length - 3 && setGoRight(!goRight);
+        } else {
+          setCurrentSlide(currentSlide - 1);
+          currentSlide === 2 && setGoRight(!goRight);
+        }
+      }, delay);
 
       return () => clearInterval(interval);
     }
-  }, [currentSlide, length, delay, doSlide]);
+  }, [currentSlide, length, delay, doSlide, goRight]);
 
   const nextSlide = () =>
     currentSlide < length - 1 && setCurrentSlide(currentSlide + 1);

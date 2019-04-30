@@ -9,11 +9,11 @@ const Slide = ({ url, alt, name, status, slideClassName, setSlide, i }) => {
         <img src={url} alt={alt} className="testimonials__avatar" img />
       </div>
       <div className="testimonials__user-info">
-        <h4 className="testimonials__autor">{name}</h4>
-        <span className="testimonials__status testimonials__status--bold">
+        <h4 className="testimonials__user-info-author">{name}</h4>
+        <span className="testimonials__user-info-status testimonials__user-info-status--bold">
           Status
         </span>
-        <span className="testimonials__status"> {status}</span>
+        <span className="testimonials__user-info-status"> {status}</span>
       </div>
     </div>
   );
